@@ -58,12 +58,12 @@ class TelegramOrderAlert extends Module
 		$this->tab = 'back_office_features';
 		$this->version = '1.0';
 		$this->author = 'Oleh Vasylyev';
-        $this->need_instance = 0;
+        	$this->need_instance = 0;
 		$this->bootstrap = true;
-        $this->displayName = $this->l('Telegram Order Alert FREE');
-        $this->description = $this->l('With this module, you can setup telegram notification for new order and order status changes in Prestashop');
-        $this->confirmUninstall = $this->l('Are you sure you want to uninstall this module?');
-        $this->ps_versions_compliancy = array('min' => '1.6', 'max' => _PS_VERSION_);
+        	$this->displayName = $this->l('Telegram Order Alert FREE');
+        	$this->description = $this->l('With this module, you can setup telegram notification for new order and order status changes in Prestashop');
+        	$this->confirmUninstall = $this->l('Are you sure you want to uninstall this module?');
+        	$this->ps_versions_compliancy = array('min' => '1.6', 'max' => _PS_VERSION_);
 		parent::__construct();
 	}
 
@@ -73,26 +73,26 @@ class TelegramOrderAlert extends Module
      */
 	public function install()
 	{
-        $multistore = Shop::isFeatureActive();
-        if ($multistore == true) {
-            Shop::setContext(Shop::CONTEXT_ALL);
-        }
+		$multistore = Shop::isFeatureActive();
+		if ($multistore == true) {
+		    Shop::setContext(Shop::CONTEXT_ALL);
+		}
 
-        foreach ($this->fields as $field) {
-            if (!Configuration::updateValue($this->name.'_'.$field, NULL)
-            ) {
-                return false;
-            }
-        }
-        if (!parent::install() ||
-            !$this->registerHook('header') ||
-            !$this->registerHook('backOfficeHeader') ||
-            !$this->registerHook('displayOrderConfirmation')
-        ) {
-            return false;
-        }
+		foreach ($this->fields as $field) {
+		    if (!Configuration::updateValue($this->name.'_'.$field, NULL)
+		    ) {
+			return false;
+		    }
+		}
+		if (!parent::install() ||
+		    !$this->registerHook('header') ||
+		    !$this->registerHook('backOfficeHeader') ||
+		    !$this->registerHook('displayOrderConfirmation')
+		) {
+		    return false;
+		}
 
-        return true;
+		return true;
 	}
 
     /**
