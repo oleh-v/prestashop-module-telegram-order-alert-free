@@ -1,6 +1,6 @@
 # Telegram Order Alert FREE - module for Prestashop
 
-Module for PrestaShop "Telegram Order Alert Free" allows you to setup telegram notification for new order in Prestashop. For more features please take a look at the PRO version.
+Module for PrestaShop "Telegram Order Alert Free" allows you to setup telegram notification for new order in Prestashop. For more features please take a look at the [PRO version](https://tobiksoft.com/prestashop/41-telegram-order-alert-pro-module-for-prestashop).
 
 ## Main Features
 * Sending notification to Telegram individual chat/group chat/channel
